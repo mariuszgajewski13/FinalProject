@@ -6,9 +6,17 @@
       xmlns:local="clr-namespace:FinalProject"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
-      Title="FinalProjectHome">
+      Title="FinalProjectHome" Margin="10,0,10,10">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
     </Grid>
 </Page>
