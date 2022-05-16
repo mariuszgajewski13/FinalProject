@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b30b7a98fde4489b9902003bd864b0fd" Name="Diagram1">
+        <EntityTypeShape EntityType="seriale_dbModel.do_obejrzenia" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.gatunki" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.koniec" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.na_biezaco" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.nie_skonczone" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.przerwa" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.seriale" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="seriale_dbModel.stacje_tv" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="seriale_dbModel.FK__do_obejrz__id_ga__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__do_obejrz__id_ga__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__do_obejrz__id_ga__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__do_obejrz__id_st__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__seriale__id_gatu__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__seriale__id_gatu__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__seriale__id_gatu__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__koniec__id_seria__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__na_biezac__id_se__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__nie_skonc__id_se__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__przerwa__id_seri__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="seriale_dbModel.FK__seriale__id_stac__2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

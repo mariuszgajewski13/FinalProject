@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="seriale_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="do_obejrzenia">
+          <Key>
+            <PropertyRef Name="id_serialu" />
+          </Key>
+          <Property Name="id_serialu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="rok_rozpoczecia" Type="int" Nullable="false" />
+          <Property Name="rok_zakonczenia" Type="int" />
+          <Property Name="id_gatunku_1" Type="int" />
+          <Property Name="id_gatunku_2" Type="int" />
+          <Property Name="id_gatunku_3" Type="int" />
+          <Property Name="id_stacji" Type="int" />
+          <Property Name="ilosc_sezonow" Type="int" Nullable="false" />
+          <Property Name="ilosc_odcinkow" Type="int" Nullable="false" />
+          <Property Name="czas_trwania_odcinka" Type="int" />
+        </EntityType>
+        <EntityType Name="gatunki">
+          <Key>
+            <PropertyRef Name="id_gatunku" />
+          </Key>
+          <Property Name="id_gatunku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="koniec">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_serialu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="na_biezaco">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_serialu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nie_skonczone">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_serialu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="przerwa">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_serialu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="seriale">
+          <Key>
+            <PropertyRef Name="id_serialu" />
+          </Key>
+          <Property Name="id_serialu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="rok_rozpoczecia" Type="int" Nullable="false" />
+          <Property Name="rok_zakonczenia" Type="int" />
+          <Property Name="id_gatunku_1" Type="int" />
+          <Property Name="id_gatunku_2" Type="int" />
+          <Property Name="id_gatunku_3" Type="int" />
+          <Property Name="id_stacji" Type="int" />
+          <Property Name="ilosc_sezonow" Type="int" Nullable="false" />
+          <Property Name="ilosc_odcinkow" Type="int" Nullable="false" />
+          <Property Name="czas_trwania_odcinka" Type="int" />
+        </EntityType>
+        <EntityType Name="stacje_tv">
+          <Key>
+            <PropertyRef Name="id_stacji" />
+          </Key>
+          <Property Name="id_stacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__do_obejrz__id_ga__31EC6D26">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_gatunku_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__do_obejrz__id_ga__32E0915F">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_gatunku_2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__do_obejrz__id_ga__33D4B598">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_gatunku_3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__do_obejrz__id_st__34C8D9D1">
+          <End Role="stacje_tv" Type="Self.stacje_tv" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stacje_tv">
+              <PropertyRef Name="id_stacji" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_stacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__koniec__id_seria__3A81B327">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="koniec" Type="Self.koniec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="koniec">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__na_biezac__id_se__37A5467C">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="na_biezaco" Type="Self.na_biezaco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="na_biezaco">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nie_skonc__id_se__3D5E1FD2">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="nie_skonczone" Type="Self.nie_skonczone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="nie_skonczone">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__przerwa__id_seri__403A8C7D">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="przerwa" Type="Self.przerwa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="przerwa">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_gatu__2A4B4B5E">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_gatunku_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_gatu__2B3F6F97">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_gatunku_2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_gatu__2C3393D0">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_gatunku_3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_stac__2D27B809">
+          <End Role="stacje_tv" Type="Self.stacje_tv" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stacje_tv">
+              <PropertyRef Name="id_stacji" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_stacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="seriale_dbModelStoreContainer">
+          <EntitySet Name="do_obejrzenia" EntityType="Self.do_obejrzenia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gatunki" EntityType="Self.gatunki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="koniec" EntityType="Self.koniec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="na_biezaco" EntityType="Self.na_biezaco" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nie_skonczone" EntityType="Self.nie_skonczone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="przerwa" EntityType="Self.przerwa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="seriale" EntityType="Self.seriale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stacje_tv" EntityType="Self.stacje_tv" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__do_obejrz__id_ga__31EC6D26" Association="Self.FK__do_obejrz__id_ga__31EC6D26">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__do_obejrz__id_ga__32E0915F" Association="Self.FK__do_obejrz__id_ga__32E0915F">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__do_obejrz__id_ga__33D4B598" Association="Self.FK__do_obejrz__id_ga__33D4B598">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__do_obejrz__id_st__34C8D9D1" Association="Self.FK__do_obejrz__id_st__34C8D9D1">
+            <End Role="stacje_tv" EntitySet="stacje_tv" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__koniec__id_seria__3A81B327" Association="Self.FK__koniec__id_seria__3A81B327">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="koniec" EntitySet="koniec" />
+          </AssociationSet>
+          <AssociationSet Name="FK__na_biezac__id_se__37A5467C" Association="Self.FK__na_biezac__id_se__37A5467C">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="na_biezaco" EntitySet="na_biezaco" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nie_skonc__id_se__3D5E1FD2" Association="Self.FK__nie_skonc__id_se__3D5E1FD2">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="nie_skonczone" EntitySet="nie_skonczone" />
+          </AssociationSet>
+          <AssociationSet Name="FK__przerwa__id_seri__403A8C7D" Association="Self.FK__przerwa__id_seri__403A8C7D">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="przerwa" EntitySet="przerwa" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_gatu__2A4B4B5E" Association="Self.FK__seriale__id_gatu__2A4B4B5E">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_gatu__2B3F6F97" Association="Self.FK__seriale__id_gatu__2B3F6F97">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_gatu__2C3393D0" Association="Self.FK__seriale__id_gatu__2C3393D0">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_stac__2D27B809" Association="Self.FK__seriale__id_stac__2D27B809">
+            <End Role="stacje_tv" EntitySet="stacje_tv" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="seriale_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="do_obejrzenia">
+          <Key>
+            <PropertyRef Name="id_serialu" />
+          </Key>
+          <Property Name="id_serialu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rok_rozpoczecia" Type="Int32" Nullable="false" />
+          <Property Name="rok_zakonczenia" Type="Int32" />
+          <Property Name="id_gatunku_1" Type="Int32" />
+          <Property Name="id_gatunku_2" Type="Int32" />
+          <Property Name="id_gatunku_3" Type="Int32" />
+          <Property Name="id_stacji" Type="Int32" />
+          <Property Name="ilosc_sezonow" Type="Int32" Nullable="false" />
+          <Property Name="ilosc_odcinkow" Type="Int32" Nullable="false" />
+          <Property Name="czas_trwania_odcinka" Type="Int32" />
+          <NavigationProperty Name="gatunki" Relationship="Self.FK__do_obejrz__id_ga__31EC6D26" FromRole="do_obejrzenia" ToRole="gatunki" />
+          <NavigationProperty Name="gatunki1" Relationship="Self.FK__do_obejrz__id_ga__32E0915F" FromRole="do_obejrzenia" ToRole="gatunki" />
+          <NavigationProperty Name="gatunki2" Relationship="Self.FK__do_obejrz__id_ga__33D4B598" FromRole="do_obejrzenia" ToRole="gatunki" />
+          <NavigationProperty Name="stacje_tv" Relationship="Self.FK__do_obejrz__id_st__34C8D9D1" FromRole="do_obejrzenia" ToRole="stacje_tv" />
+        </EntityType>
+        <EntityType Name="gatunki">
+          <Key>
+            <PropertyRef Name="id_gatunku" />
+          </Key>
+          <Property Name="id_gatunku" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="do_obejrzenia" Relationship="Self.FK__do_obejrz__id_ga__31EC6D26" FromRole="gatunki" ToRole="do_obejrzenia" />
+          <NavigationProperty Name="do_obejrzenia1" Relationship="Self.FK__do_obejrz__id_ga__32E0915F" FromRole="gatunki" ToRole="do_obejrzenia" />
+          <NavigationProperty Name="do_obejrzenia2" Relationship="Self.FK__do_obejrz__id_ga__33D4B598" FromRole="gatunki" ToRole="do_obejrzenia" />
+          <NavigationProperty Name="seriale" Relationship="Self.FK__seriale__id_gatu__2A4B4B5E" FromRole="gatunki" ToRole="seriale" />
+          <NavigationProperty Name="seriale1" Relationship="Self.FK__seriale__id_gatu__2B3F6F97" FromRole="gatunki" ToRole="seriale" />
+          <NavigationProperty Name="seriale2" Relationship="Self.FK__seriale__id_gatu__2C3393D0" FromRole="gatunki" ToRole="seriale" />
+        </EntityType>
+        <EntityType Name="koniec">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_serialu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="seriale" Relationship="Self.FK__koniec__id_seria__3A81B327" FromRole="koniec" ToRole="seriale" />
+        </EntityType>
+        <EntityType Name="na_biezaco">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_serialu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="seriale" Relationship="Self.FK__na_biezac__id_se__37A5467C" FromRole="na_biezaco" ToRole="seriale" />
+        </EntityType>
+        <EntityType Name="nie_skonczone">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_serialu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="seriale" Relationship="Self.FK__nie_skonc__id_se__3D5E1FD2" FromRole="nie_skonczone" ToRole="seriale" />
+        </EntityType>
+        <EntityType Name="przerwa">
+          <Key>
+            <PropertyRef Name="lp" />
+          </Key>
+          <Property Name="lp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_serialu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="seriale" Relationship="Self.FK__przerwa__id_seri__403A8C7D" FromRole="przerwa" ToRole="seriale" />
+        </EntityType>
+        <EntityType Name="seriale">
+          <Key>
+            <PropertyRef Name="id_serialu" />
+          </Key>
+          <Property Name="id_serialu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rok_rozpoczecia" Type="Int32" Nullable="false" />
+          <Property Name="rok_zakonczenia" Type="Int32" />
+          <Property Name="id_gatunku_1" Type="Int32" />
+          <Property Name="id_gatunku_2" Type="Int32" />
+          <Property Name="id_gatunku_3" Type="Int32" />
+          <Property Name="id_stacji" Type="Int32" />
+          <Property Name="ilosc_sezonow" Type="Int32" Nullable="false" />
+          <Property Name="ilosc_odcinkow" Type="Int32" Nullable="false" />
+          <Property Name="czas_trwania_odcinka" Type="Int32" />
+          <NavigationProperty Name="gatunki" Relationship="Self.FK__seriale__id_gatu__2A4B4B5E" FromRole="seriale" ToRole="gatunki" />
+          <NavigationProperty Name="gatunki1" Relationship="Self.FK__seriale__id_gatu__2B3F6F97" FromRole="seriale" ToRole="gatunki" />
+          <NavigationProperty Name="gatunki2" Relationship="Self.FK__seriale__id_gatu__2C3393D0" FromRole="seriale" ToRole="gatunki" />
+          <NavigationProperty Name="koniec" Relationship="Self.FK__koniec__id_seria__3A81B327" FromRole="seriale" ToRole="koniec" />
+          <NavigationProperty Name="na_biezaco" Relationship="Self.FK__na_biezac__id_se__37A5467C" FromRole="seriale" ToRole="na_biezaco" />
+          <NavigationProperty Name="nie_skonczone" Relationship="Self.FK__nie_skonc__id_se__3D5E1FD2" FromRole="seriale" ToRole="nie_skonczone" />
+          <NavigationProperty Name="przerwa" Relationship="Self.FK__przerwa__id_seri__403A8C7D" FromRole="seriale" ToRole="przerwa" />
+          <NavigationProperty Name="stacje_tv" Relationship="Self.FK__seriale__id_stac__2D27B809" FromRole="seriale" ToRole="stacje_tv" />
+        </EntityType>
+        <EntityType Name="stacje_tv">
+          <Key>
+            <PropertyRef Name="id_stacji" />
+          </Key>
+          <Property Name="id_stacji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="do_obejrzenia" Relationship="Self.FK__do_obejrz__id_st__34C8D9D1" FromRole="stacje_tv" ToRole="do_obejrzenia" />
+          <NavigationProperty Name="seriale" Relationship="Self.FK__seriale__id_stac__2D27B809" FromRole="stacje_tv" ToRole="seriale" />
+        </EntityType>
+        <Association Name="FK__do_obejrz__id_ga__31EC6D26">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_gatunku_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__do_obejrz__id_ga__32E0915F">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_gatunku_2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__do_obejrz__id_ga__33D4B598">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_gatunku_3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__do_obejrz__id_st__34C8D9D1">
+          <End Role="stacje_tv" Type="Self.stacje_tv" Multiplicity="0..1" />
+          <End Role="do_obejrzenia" Type="Self.do_obejrzenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stacje_tv">
+              <PropertyRef Name="id_stacji" />
+            </Principal>
+            <Dependent Role="do_obejrzenia">
+              <PropertyRef Name="id_stacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_gatu__2A4B4B5E">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_gatunku_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_gatu__2B3F6F97">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_gatunku_2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_gatu__2C3393D0">
+          <End Role="gatunki" Type="Self.gatunki" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gatunki">
+              <PropertyRef Name="id_gatunku" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_gatunku_3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__koniec__id_seria__3A81B327">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="koniec" Type="Self.koniec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="koniec">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__na_biezac__id_se__37A5467C">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="na_biezaco" Type="Self.na_biezaco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="na_biezaco">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nie_skonc__id_se__3D5E1FD2">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="nie_skonczone" Type="Self.nie_skonczone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="nie_skonczone">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__przerwa__id_seri__403A8C7D">
+          <End Role="seriale" Type="Self.seriale" Multiplicity="1" />
+          <End Role="przerwa" Type="Self.przerwa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriale">
+              <PropertyRef Name="id_serialu" />
+            </Principal>
+            <Dependent Role="przerwa">
+              <PropertyRef Name="id_serialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__seriale__id_stac__2D27B809">
+          <End Role="stacje_tv" Type="Self.stacje_tv" Multiplicity="0..1" />
+          <End Role="seriale" Type="Self.seriale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stacje_tv">
+              <PropertyRef Name="id_stacji" />
+            </Principal>
+            <Dependent Role="seriale">
+              <PropertyRef Name="id_stacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="seriale_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="do_obejrzenia" EntityType="Self.do_obejrzenia" />
+          <EntitySet Name="gatunki" EntityType="Self.gatunki" />
+          <EntitySet Name="koniec" EntityType="Self.koniec" />
+          <EntitySet Name="na_biezaco" EntityType="Self.na_biezaco" />
+          <EntitySet Name="nie_skonczone" EntityType="Self.nie_skonczone" />
+          <EntitySet Name="przerwa" EntityType="Self.przerwa" />
+          <EntitySet Name="seriale" EntityType="Self.seriale" />
+          <EntitySet Name="stacje_tv" EntityType="Self.stacje_tv" />
+          <AssociationSet Name="FK__do_obejrz__id_ga__31EC6D26" Association="Self.FK__do_obejrz__id_ga__31EC6D26">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__do_obejrz__id_ga__32E0915F" Association="Self.FK__do_obejrz__id_ga__32E0915F">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__do_obejrz__id_ga__33D4B598" Association="Self.FK__do_obejrz__id_ga__33D4B598">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__do_obejrz__id_st__34C8D9D1" Association="Self.FK__do_obejrz__id_st__34C8D9D1">
+            <End Role="stacje_tv" EntitySet="stacje_tv" />
+            <End Role="do_obejrzenia" EntitySet="do_obejrzenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_gatu__2A4B4B5E" Association="Self.FK__seriale__id_gatu__2A4B4B5E">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_gatu__2B3F6F97" Association="Self.FK__seriale__id_gatu__2B3F6F97">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_gatu__2C3393D0" Association="Self.FK__seriale__id_gatu__2C3393D0">
+            <End Role="gatunki" EntitySet="gatunki" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__koniec__id_seria__3A81B327" Association="Self.FK__koniec__id_seria__3A81B327">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="koniec" EntitySet="koniec" />
+          </AssociationSet>
+          <AssociationSet Name="FK__na_biezac__id_se__37A5467C" Association="Self.FK__na_biezac__id_se__37A5467C">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="na_biezaco" EntitySet="na_biezaco" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nie_skonc__id_se__3D5E1FD2" Association="Self.FK__nie_skonc__id_se__3D5E1FD2">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="nie_skonczone" EntitySet="nie_skonczone" />
+          </AssociationSet>
+          <AssociationSet Name="FK__przerwa__id_seri__403A8C7D" Association="Self.FK__przerwa__id_seri__403A8C7D">
+            <End Role="seriale" EntitySet="seriale" />
+            <End Role="przerwa" EntitySet="przerwa" />
+          </AssociationSet>
+          <AssociationSet Name="FK__seriale__id_stac__2D27B809" Association="Self.FK__seriale__id_stac__2D27B809">
+            <End Role="stacje_tv" EntitySet="stacje_tv" />
+            <End Role="seriale" EntitySet="seriale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="seriale_dbModelStoreContainer" CdmEntityContainer="seriale_dbEntities">
+          <EntitySetMapping Name="do_obejrzenia">
+            <EntityTypeMapping TypeName="seriale_dbModel.do_obejrzenia">
+              <MappingFragment StoreEntitySet="do_obejrzenia">
+                <ScalarProperty Name="id_serialu" ColumnName="id_serialu" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="rok_rozpoczecia" ColumnName="rok_rozpoczecia" />
+                <ScalarProperty Name="rok_zakonczenia" ColumnName="rok_zakonczenia" />
+                <ScalarProperty Name="id_gatunku_1" ColumnName="id_gatunku_1" />
+                <ScalarProperty Name="id_gatunku_2" ColumnName="id_gatunku_2" />
+                <ScalarProperty Name="id_gatunku_3" ColumnName="id_gatunku_3" />
+                <ScalarProperty Name="id_stacji" ColumnName="id_stacji" />
+                <ScalarProperty Name="ilosc_sezonow" ColumnName="ilosc_sezonow" />
+                <ScalarProperty Name="ilosc_odcinkow" ColumnName="ilosc_odcinkow" />
+                <ScalarProperty Name="czas_trwania_odcinka" ColumnName="czas_trwania_odcinka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gatunki">
+            <EntityTypeMapping TypeName="seriale_dbModel.gatunki">
+              <MappingFragment StoreEntitySet="gatunki">
+                <ScalarProperty Name="id_gatunku" ColumnName="id_gatunku" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="koniec">
+            <EntityTypeMapping TypeName="seriale_dbModel.koniec">
+              <MappingFragment StoreEntitySet="koniec">
+                <ScalarProperty Name="lp" ColumnName="lp" />
+                <ScalarProperty Name="id_serialu" ColumnName="id_serialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="na_biezaco">
+            <EntityTypeMapping TypeName="seriale_dbModel.na_biezaco">
+              <MappingFragment StoreEntitySet="na_biezaco">
+                <ScalarProperty Name="lp" ColumnName="lp" />
+                <ScalarProperty Name="id_serialu" ColumnName="id_serialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nie_skonczone">
+            <EntityTypeMapping TypeName="seriale_dbModel.nie_skonczone">
+              <MappingFragment StoreEntitySet="nie_skonczone">
+                <ScalarProperty Name="lp" ColumnName="lp" />
+                <ScalarProperty Name="id_serialu" ColumnName="id_serialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="przerwa">
+            <EntityTypeMapping TypeName="seriale_dbModel.przerwa">
+              <MappingFragment StoreEntitySet="przerwa">
+                <ScalarProperty Name="lp" ColumnName="lp" />
+                <ScalarProperty Name="id_serialu" ColumnName="id_serialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seriale">
+            <EntityTypeMapping TypeName="seriale_dbModel.seriale">
+              <MappingFragment StoreEntitySet="seriale">
+                <ScalarProperty Name="id_serialu" ColumnName="id_serialu" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="rok_rozpoczecia" ColumnName="rok_rozpoczecia" />
+                <ScalarProperty Name="rok_zakonczenia" ColumnName="rok_zakonczenia" />
+                <ScalarProperty Name="id_gatunku_1" ColumnName="id_gatunku_1" />
+                <ScalarProperty Name="id_gatunku_2" ColumnName="id_gatunku_2" />
+                <ScalarProperty Name="id_gatunku_3" ColumnName="id_gatunku_3" />
+                <ScalarProperty Name="id_stacji" ColumnName="id_stacji" />
+                <ScalarProperty Name="ilosc_sezonow" ColumnName="ilosc_sezonow" />
+                <ScalarProperty Name="ilosc_odcinkow" ColumnName="ilosc_odcinkow" />
+                <ScalarProperty Name="czas_trwania_odcinka" ColumnName="czas_trwania_odcinka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stacje_tv">
+            <EntityTypeMapping TypeName="seriale_dbModel.stacje_tv">
+              <MappingFragment StoreEntitySet="stacje_tv">
+                <ScalarProperty Name="id_stacji" ColumnName="id_stacji" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
