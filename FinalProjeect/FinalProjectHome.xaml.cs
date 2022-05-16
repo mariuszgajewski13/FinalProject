@@ -24,5 +24,11 @@ namespace FinalProject
         {
             InitializeComponent();
         }
+
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            Page1 page1 = new Page1();
+            this.NavigationService.Navigate(page1);
+        }
     }
 }
