@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FinalProject
 {
     /// <summary>
-    /// Logika interakcji dla klasy Page1.xaml
+    /// Interaction logic for TVwatchlist.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class TVwatchlist : Page
     {
-        public Page1()
+        public TVwatchlist()
         {
             InitializeComponent();
         }

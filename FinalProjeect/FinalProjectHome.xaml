@@ -8,9 +8,9 @@
       d:DesignHeight="350" d:DesignWidth="500"
       Title="FinalProjectHome" Margin="10,0,10,10">
 
-    <Grid>
+    <Grid HorizontalAlignment="Right" Width="500">
         <Grid.Background>
-            <ImageBrush ImageSource="test1.png" />
+            <SolidColorBrush Color="AntiqueWhite"/>
         </Grid.Background>
         
         <Grid.ColumnDefinitions>
@@ -26,17 +26,15 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="1" Style="{StaticResource headerTextStyle}" >
-            View Expense Report
+            TV Shows Database
         </Label>
 
         <Border Grid.Column="1" Grid.Row="1" Style="{StaticResource listHeaderStyle}">
-            <Label Style="{StaticResource listHeaderTextStyle}">Names</Label>
+            <Label Style="{StaticResource listHeaderTextStyle}">Categories</Label>
         </Border>
         <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
-            <ListBoxItem>Mike</ListBoxItem>
-            <ListBoxItem>Lisa</ListBoxItem>
-            <ListBoxItem>John</ListBoxItem>
-            <ListBoxItem>Mary</ListBoxItem>
+            <ListBoxItem>All</ListBoxItem>
+            <ListBoxItem>Watchlist</ListBoxItem>
         </ListBox>
 
         <!-- View report button -->

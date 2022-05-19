@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace FinalProject
 {
     /// <summary>
-    /// Logika interakcji dla klasy FinalrojeectHome.xaml
+    /// Logika interakcji dla klasy Page1.xaml
     /// </summary>
-    public partial class FinalProjectHome : Page
+    public partial class TVall : Page
     {
-        public FinalProjectHome()
+        public TVall()
         {
             InitializeComponent();
-        }
-
-        private void ButtonClick(object sender, RoutedEventArgs e)
-        {
-            TVall page1 = new TVall();
-            this.NavigationService.Navigate(page1);
         }
     }
 }
