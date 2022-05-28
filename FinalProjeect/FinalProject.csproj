@@ -93,11 +93,6 @@
     <Compile Include="seriale.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="seriale_dbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>seriale_dbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="stacje_tv.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -168,20 +163,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="seriale_dbDataSet.xsc">
-      <DependentUpon>seriale_dbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="seriale_dbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>seriale_dbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="seriale_dbDataSet.xss">
-      <DependentUpon>seriale_dbDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="test1.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model1.Context.tt">

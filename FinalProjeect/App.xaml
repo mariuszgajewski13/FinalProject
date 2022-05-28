@@ -10,7 +10,7 @@
             <Setter Property="Label.FontFamily" Value="Trebuchet MS"></Setter>
             <Setter Property="Label.FontWeight" Value="Bold"></Setter>
             <Setter Property="Label.FontSize" Value="18"></Setter>
-            <Setter Property="Label.Foreground" Value="White"></Setter>
+            <Setter Property="Label.Foreground" Value="#0066cc"></Setter>
         </Style>
 
         <!-- Label style -->
@@ -49,11 +49,6 @@
             <Setter Property="Height" Value="25" />
             <Setter Property="Margin" Value="0,10,0,0" />
             <Setter Property="HorizontalAlignment" Value="Right" />
-        </Style>
-        
-        <!-- Grid background style-->
-        <Style x:Key="gridBackgroundStyle" TargetType="{x:Type Grid}">
-            <Setter Property="Background" Value="#DCCCBB" />
         </Style>
     </Application.Resources>
 </Application>
