@@ -8,10 +8,7 @@
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Final Project - some page">
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="test1.png" />
-        </Grid.Background>
+    <Grid Style="{StaticResource gridBackgroundStyle}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="230" />
             <ColumnDefinition />
