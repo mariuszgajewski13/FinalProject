@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalProjeect
+namespace FinalProject
 {
     using System;
     using System.Collections.Generic;

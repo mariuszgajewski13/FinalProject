@@ -11,6 +11,7 @@
             <Setter Property="Label.FontWeight" Value="Bold"></Setter>
             <Setter Property="Label.FontSize" Value="18"></Setter>
             <Setter Property="Label.Foreground" Value="White"></Setter>
+            <Setter Property="Grid.Background" Value="#8D98A7"></Setter>
         </Style>
 
         <!-- Label style -->
