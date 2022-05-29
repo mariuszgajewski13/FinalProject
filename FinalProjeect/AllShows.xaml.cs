@@ -12,18 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.Entity.Core.Objects;
 
 namespace FinalProject
 {
     /// <summary>
-    /// Logika interakcji dla klasy Page1.xaml
+    /// Interaction logic for all.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class AllShows : Page
     {
         seriale_dbEntities dataEntities = new seriale_dbEntities();
-       
-        public Page1()
+        public AllShows()
         {
             InitializeComponent();
         }
@@ -31,13 +29,14 @@ namespace FinalProject
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var query =
-            from product in dataEntities.do_obejrzenia
-            select new { product.nazwa};
+            from product in dataEntities.seriale
+            select new { product.nazwa };
 
-            dataGrid.ItemsSource = query.ToList();
+            all.ItemsSource = query.ToList();
         }
 
-        public Page1(object data) : this(){
+        public AllShows(object data) : this()
+        {
             this.DataContext = data;
         }
     }

@@ -30,11 +30,13 @@
         <Border Grid.Row="2" Style="{StaticResource listHeaderStyle}" Margin="0,56,0,178" Grid.RowSpan="2">
             <Label Style="{StaticResource listHeaderTextStyle}">Lists</Label>
         </Border>
-        <ListBox Name="peopleListBox" Grid.Row="3" Margin="0,3,0,49">
-            <ListBoxItem>All</ListBoxItem>
-            <ListBoxItem>Watchlist</ListBoxItem>
+        <ListBox Name="listNamesBox" Grid.Row="3" Margin="0,3,0,49">
+            <ListBoxItem >All</ListBoxItem>
+            <ListBoxItem x:Name="page1">Watchlist</ListBoxItem>
             <ListBoxItem>Currently watching</ListBoxItem>
             <ListBoxItem>Watched</ListBoxItem>
+            <Button Click="All" Style="{StaticResource buttonStyle}">All</Button>
+            <Button Click="Watchlist" Style="{StaticResource buttonStyle}">Watchlist</Button>
         </ListBox>
 
         <!-- View report button -->

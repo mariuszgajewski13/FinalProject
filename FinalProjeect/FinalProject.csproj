@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AllShows.xaml.cs">
+      <DependentUpon>AllShows.xaml</DependentUpon>
+    </Compile>
     <Compile Include="do_obejrzenia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
     <Compile Include="stacje_tv.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="AllShows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FinalProjectHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
