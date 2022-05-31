@@ -31,15 +31,16 @@
             <Label Style="{StaticResource listHeaderTextStyle}">Lists</Label>
         </Border>
         <ListBox Name="listNamesBox" Grid.Row="3" Margin="0,3,0,49">
-            <ListBoxItem >All</ListBoxItem>
-            <ListBoxItem x:Name="page1">Watchlist</ListBoxItem>
+            <!--<ListBoxItem >All</ListBoxItem>
+            <ListBoxItem x:Name="Watchlist">Watchlist</ListBoxItem>
             <ListBoxItem>Currently watching</ListBoxItem>
-            <ListBoxItem>Watched</ListBoxItem>
+            <ListBoxItem>Watched</ListBoxItem>-->
             <Button Click="All" Style="{StaticResource buttonStyle}">All</Button>
             <Button Click="Watchlist" Style="{StaticResource buttonStyle}">Watchlist</Button>
+            <Button Click="Current" Style="{StaticResource buttonStyle}">Currently watching</Button>
         </ListBox>
 
         <!-- View report button -->
-        <Button Grid.Column="1" Grid.Row="3" Click="ButtonClick" Style="{StaticResource buttonStyle}" Width="125" Margin="0,104,97,49">View</Button>
+        <!--<Button Grid.Column="1" Grid.Row="3" Click="ButtonClick" Style="{StaticResource buttonStyle}" Width="125" Margin="0,104,97,49">View</Button>-->
     </Grid>
 </Page>

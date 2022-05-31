@@ -17,13 +17,13 @@ using System.Data.Entity.Core.Objects;
 namespace FinalProject
 {
     /// <summary>
-    /// Logika interakcji dla klasy Page1.xaml
+    /// Logika interakcji dla klasy Watchlist.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Watchlist : Page
     {
         seriale_dbEntities dataEntities = new seriale_dbEntities();
        
-        public Page1()
+        public Watchlist()
         {
             InitializeComponent();
         }
@@ -31,13 +31,13 @@ namespace FinalProject
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var query =
-            from product in dataEntities.do_obejrzenia
-            select new { product.nazwa};
+            from data in dataEntities.do_obejrzenia
+            select new { data.nazwa};
 
             dataGrid.ItemsSource = query.ToList();
         }
 
-        public Page1(object data) : this(){
+        public Watchlist(object data) : this(){
             this.DataContext = data;
         }
     }

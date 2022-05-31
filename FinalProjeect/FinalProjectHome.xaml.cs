@@ -27,14 +27,14 @@ namespace FinalProject
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
-            //Page1 page1 = new Page1(this.listNamesBox.SelectedItem);
+            //Watchlist Watchlist = new Watchlist(this.listNamesBox.SelectedItem);
             //AllShows allShows = new AllShows(this.listNamesBox.SelectedItem); 
 
             //this.NavigationService.Navigate(allShows);
             //switch (this.listNamesBox.SelectedItem)
             //{
-            //    case "page1":
-            //        this.NavigationService.Navigate(page1);
+            //    case "Watchlist":
+            //        this.NavigationService.Navigate(Watchlist);
             //        break;
 
             //    default:
@@ -46,7 +46,7 @@ namespace FinalProject
             switch (item)
             {
                 case '1':
-                    NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
                     break;
                 default:
                     NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
@@ -62,7 +62,11 @@ namespace FinalProject
         
         private void Watchlist(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
+        }
+        private void Current(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/CurrentlyWatching.xaml", UriKind.Relative));
         }
     }
 }

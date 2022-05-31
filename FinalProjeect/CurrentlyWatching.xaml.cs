@@ -16,26 +16,27 @@ using System.Windows.Shapes;
 namespace FinalProject
 {
     /// <summary>
-    /// Interaction logic for all.xaml
+    /// Interaction logic for CurrentlyWattching.xaml
     /// </summary>
-    public partial class AllShows : Page
+    public partial class CurrentlyWatching : Page
     {
-        public AllShows()
+        public CurrentlyWatching()
         {
             InitializeComponent();
         }
+
         seriale_dbEntities dataEntities = new seriale_dbEntities();
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var query =
-            from data in dataEntities.seriale
-            select new { data.nazwa };
+            from data in dataEntities.na_biezaco
+            select new { data.id_serialu };
 
-            all.ItemsSource = query.ToList();
+            current.ItemsSource = query.ToList();
         }
 
-        public AllShows(object data) : this()
+        public CurrentlyWatching(object data) : this()
         {
             this.DataContext = data;
         }
