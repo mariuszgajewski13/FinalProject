@@ -42,16 +42,16 @@ namespace FinalProject
             //        break;
 
             //}
-            var item = listNamesBox.Items[listNamesBox.SelectedIndex];
-            switch (item)
-            {
-                case '1':
-                    NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
-                    break;
-                default:
-                    NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
-                    break ;
-            }
+            //var item = listNamesBox.Items[listNamesBox.SelectedIndex];
+            //switch (item)
+            //{
+            //    case '1':
+            //        NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
+            //        break;
+            //    default:
+            //        NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
+            //        break ;
+            //}
             
         }
 

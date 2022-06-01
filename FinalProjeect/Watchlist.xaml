@@ -30,7 +30,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
+            <Grid.RowDefinitions> 
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
@@ -38,9 +38,9 @@
 
             
         </Grid>
-        <DataGrid Grid.Column="1" Grid.Row="1" Name="dataGrid">
+        <DataGrid Grid.Column="1" Grid.Row="1" Name="dataGrid" Style="{StaticResource dataGridStyle}" />
 
-        </DataGrid>
+
 
     </Grid>
 </Page>

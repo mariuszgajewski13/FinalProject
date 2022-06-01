@@ -31,7 +31,9 @@ namespace FinalProject
         {
             var query =
             from data in dataEntities.na_biezaco
-            select new { data.id_serialu };
+            from data1 in dataEntities.seriale
+            where data.id_serialu == data1.id_serialu
+            select new { data1.nazwa } ;
 
             current.ItemsSource = query.ToList();
         }

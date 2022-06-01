@@ -10,35 +10,35 @@
 namespace FinalProject
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class gatunki
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public gatunki()
         {
-            this.do_obejrzenia = new HashSet<do_obejrzenia>();
-            this.do_obejrzenia1 = new HashSet<do_obejrzenia>();
-            this.do_obejrzenia2 = new HashSet<do_obejrzenia>();
-            this.seriale = new HashSet<seriale>();
-            this.seriale1 = new HashSet<seriale>();
-            this.seriale2 = new HashSet<seriale>();
+            this.do_obejrzenia = new ObservableCollection<do_obejrzenia>();
+            this.do_obejrzenia1 = new ObservableCollection<do_obejrzenia>();
+            this.do_obejrzenia2 = new ObservableCollection<do_obejrzenia>();
+            this.seriale = new ObservableCollection<seriale>();
+            this.seriale1 = new ObservableCollection<seriale>();
+            this.seriale2 = new ObservableCollection<seriale>();
         }
     
         public int id_gatunku { get; set; }
         public string nazwa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<do_obejrzenia> do_obejrzenia { get; set; }
+        public virtual ObservableCollection<do_obejrzenia> do_obejrzenia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<do_obejrzenia> do_obejrzenia1 { get; set; }
+        public virtual ObservableCollection<do_obejrzenia> do_obejrzenia1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<do_obejrzenia> do_obejrzenia2 { get; set; }
+        public virtual ObservableCollection<do_obejrzenia> do_obejrzenia2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<seriale> seriale { get; set; }
+        public virtual ObservableCollection<seriale> seriale { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<seriale> seriale1 { get; set; }
+        public virtual ObservableCollection<seriale> seriale1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<seriale> seriale2 { get; set; }
+        public virtual ObservableCollection<seriale> seriale2 { get; set; }
     }
 }

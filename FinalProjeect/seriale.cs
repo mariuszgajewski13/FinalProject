@@ -10,17 +10,17 @@
 namespace FinalProject
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class seriale
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public seriale()
         {
-            this.koniec = new HashSet<koniec>();
-            this.na_biezaco = new HashSet<na_biezaco>();
-            this.nie_skonczone = new HashSet<nie_skonczone>();
-            this.przerwa = new HashSet<przerwa>();
+            this.koniec = new ObservableCollection<koniec>();
+            this.na_biezaco = new ObservableCollection<na_biezaco>();
+            this.nie_skonczone = new ObservableCollection<nie_skonczone>();
+            this.przerwa = new ObservableCollection<przerwa>();
         }
     
         public int id_serialu { get; set; }
@@ -39,13 +39,13 @@ namespace FinalProject
         public virtual gatunki gatunki1 { get; set; }
         public virtual gatunki gatunki2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<koniec> koniec { get; set; }
+        public virtual ObservableCollection<koniec> koniec { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<na_biezaco> na_biezaco { get; set; }
+        public virtual ObservableCollection<na_biezaco> na_biezaco { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<nie_skonczone> nie_skonczone { get; set; }
+        public virtual ObservableCollection<nie_skonczone> nie_skonczone { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<przerwa> przerwa { get; set; }
+        public virtual ObservableCollection<przerwa> przerwa { get; set; }
         public virtual stacje_tv stacje_tv { get; set; }
     }
 }

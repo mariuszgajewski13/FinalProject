@@ -34,7 +34,7 @@
         <Style x:Key="listHeaderStyle" TargetType="{x:Type Border}">
             <Setter Property="Height" Value="35" />
             <Setter Property="Padding" Value="5" />
-            <Setter Property="Background" Value="#4E87D4" />
+            <Setter Property="Background" Value="#A7754D" />
         </Style>
 
         <!-- List header text style -->
@@ -50,11 +50,16 @@
             <Setter Property="Height" Value="25" />
             <Setter Property="Margin" Value="0,10,0,0" />
             <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Background" Value="#EAB464" />
         </Style>
         
         <!-- Grid background style-->
         <Style x:Key="gridBackgroundStyle" TargetType="{x:Type Grid}">
             <Setter Property="Background" Value="#DCCCBB" />
+        </Style>
+
+        <Style x:Key="dataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="#646E78" />
         </Style>
     </Application.Resources>
 </Application>

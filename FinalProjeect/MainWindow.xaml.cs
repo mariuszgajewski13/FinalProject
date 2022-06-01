@@ -20,9 +20,13 @@ namespace FinalProject
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        seriale_dbEntities database = new seriale_dbEntities();
+        CollectionViewSource naBierzaco;
+
         public MainWindow()
         {
             InitializeComponent();
+            //naBierzaco = ((CollectionViewSource)(FindResource("")));
         }
     }
 }

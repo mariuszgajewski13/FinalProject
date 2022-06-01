@@ -38,9 +38,9 @@
 
 
         </Grid>
-        <DataGrid Grid.Column="1" Grid.Row="1" Name="all">
+        <DataGrid Grid.Column="1" Grid.Row="1" Name="all" Style="{StaticResource dataGridStyle}" />
 
-        </DataGrid>
+
 
     </Grid>
 </Page>
