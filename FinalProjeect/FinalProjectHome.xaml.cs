@@ -68,5 +68,10 @@ namespace FinalProject
         {
             NavigationService.Navigate(new Uri("/CurrentlyWatching.xaml", UriKind.Relative));
         }
+        
+        private void End(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/End.xaml", UriKind.Relative));
+        }
     }
 }

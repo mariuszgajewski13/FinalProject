@@ -102,8 +102,8 @@ INSERT INTO do_obejrzenia VALUES
 
 INSERT INTO na_biezaco VALUES
 	(1),
-	(1),
-	(1);
+	(3),
+	(4);
 	
 INSERT INTO koniec VALUES
 	(1),
