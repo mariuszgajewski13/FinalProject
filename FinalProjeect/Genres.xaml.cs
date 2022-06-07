@@ -12,35 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.Entity.Core.Objects;
 
 namespace FinalProject
 {
     /// <summary>
-    /// Logika interakcji dla klasy Watchlist.xaml
+    /// Interaction logic for Genres.xaml
     /// </summary>
-    public partial class End : Page
+    public partial class Genres : Page
     {
+        public Genres()
+        {
+            InitializeComponent();
+        }
+        
         seriale_dbEntities dataEntities = new seriale_dbEntities();
         Menu menu = new Menu();
 
-        public End()
-        {
-            InitializeComponent();    
-        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var query =
-           from data in dataEntities.koniec
-           from data1 in dataEntities.seriale
-           where data.id_serialu == data1.id_serialu
-           select new { data1.nazwa };
+           from data in dataEntities.gatunki
+           select new {data.id_gatunku, data.nazwa };
 
             dataGrid.ItemsSource = query.ToList();
         }
 
-        public End(object data) : this()
+        public Genres(object data) : this()
         {
             this.DataContext = data;
         }
@@ -48,7 +46,7 @@ namespace FinalProject
         public void All(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
-           // menu.All();
+            // menu.All();
         }
 
         private void Watchlist(object sender, RoutedEventArgs e)
@@ -64,9 +62,7 @@ namespace FinalProject
         {
             NavigationService.Navigate(new Uri("/End.xaml", UriKind.Relative));
         }
-        private void Genres(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Genres.xaml", UriKind.Relative));
-        }
+        
     }
 }
+

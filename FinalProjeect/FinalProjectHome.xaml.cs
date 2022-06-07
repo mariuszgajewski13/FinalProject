@@ -20,44 +20,18 @@ namespace FinalProject
     /// </summary>
     public partial class FinalProjectHome : Page
     {
+        Menu menu = new Menu();
         public FinalProjectHome()
         {
             InitializeComponent();
         }
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
-        {
-            //Watchlist Watchlist = new Watchlist(this.listNamesBox.SelectedItem);
-            //AllShows allShows = new AllShows(this.listNamesBox.SelectedItem); 
-
-            //this.NavigationService.Navigate(allShows);
-            //switch (this.listNamesBox.SelectedItem)
-            //{
-            //    case "Watchlist":
-            //        this.NavigationService.Navigate(Watchlist);
-            //        break;
-
-            //    default:
-            //        this.NavigationService.Navigate(this);
-            //        break;
-
-            //}
-            //var item = listNamesBox.Items[listNamesBox.SelectedIndex];
-            //switch (item)
-            //{
-            //    case '1':
-            //        NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
-            //        break;
-            //    default:
-            //        NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
-            //        break ;
-            //}
-            
-        }
-
-        private void All(object sender, RoutedEventArgs e)
+        public void All(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
+            //menu.All();
+            //Menu menu1 = new Menu();
+            //menu.All();
         }
         
         private void Watchlist(object sender, RoutedEventArgs e)
@@ -72,6 +46,11 @@ namespace FinalProject
         private void End(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/End.xaml", UriKind.Relative));
+        }
+
+        private void Genres(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Genres.xaml", UriKind.Relative));
         }
     }
 }

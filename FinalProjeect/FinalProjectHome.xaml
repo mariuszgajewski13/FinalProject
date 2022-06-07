@@ -40,6 +40,7 @@
             <Button Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,40,133,113">Watchlist</Button>
             <Button Click="Current" Style="{StaticResource buttonStyle}" Margin="0,70,133,83">Currently watching</Button>
             <Button Click="End" Style="{StaticResource buttonStyle}" Margin="0,100,134,53">Ended</Button>
+            <Button Click="Genres" Style="{StaticResource buttonStyle}" Margin="0,10,-9,143">Genres</Button>
         </Grid>
         <!--</ListBox>-->
 

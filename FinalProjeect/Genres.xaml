@@ -1,4 +1,4 @@
-﻿<Page x:Class="FinalProject.End"
+﻿<Page x:Class="FinalProject.Genres"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:FinalProject"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="End"
-      Loaded="Page_Loaded">
+      Title="Genres"      Loaded="Page_Loaded">
 
     <Grid Style="{StaticResource gridBackgroundStyle}">
         <Grid.ColumnDefinitions>
@@ -22,7 +21,7 @@
 
         <Rectangle Fill="#8D98A7" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,1" />
         <Label Style="{StaticResource headerTextStyle}" Height="30" Margin="10,0,26,0" >
-            Shows that ended
+            Genre list
         </Label>
         <Grid Margin="10,10,10,10" Grid.Column="0" Grid.Row="1">
 
@@ -35,13 +34,13 @@
             </Grid.RowDefinitions>
 
             <Border Grid.Row="0" Style="{StaticResource listHeaderStyle}">
-                <Label Grid.Row="0" Style="{StaticResource listHeaderTextStyle}">Menu</Label>   
-             </Border>
+                <Label Grid.Row="0" Style="{StaticResource listHeaderTextStyle}">Menu</Label>
+            </Border>
 
             <Button Grid.Row="1" Click="All" Style="{StaticResource buttonStyle}" Margin="0,10,85,143">All</Button>
             <Button Grid.Row="1" Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,40,85,113">Watchlist</Button>
             <Button Grid.Row="1" Click="Current" Style="{StaticResource buttonStyle}" Margin="0,72,85,81">Currently watching</Button>
-            <Button Grid.Row="1" Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,100,85,53">Ended</Button>  
+            <Button Grid.Row="1" Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,100,85,53">Ended</Button>
 
 
 
@@ -54,3 +53,4 @@
 
     </Grid>
 </Page>
+
