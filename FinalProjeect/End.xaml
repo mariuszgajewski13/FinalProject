@@ -42,8 +42,8 @@
             <Button Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,25,0,245" Grid.Row="1" HorizontalAlignment="Center">Watchlist</Button>
             <Button Click="Current" Style="{StaticResource buttonStyle}" Margin="0,55,0,215" Grid.Row="1" HorizontalAlignment="Center">Currently watching</Button>
             <Button Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,85,0,185" Grid.Row="1" HorizontalAlignment="Center">Ended</Button>
-            <Button Click="Genre" Style="{StaticResource buttonStyle}" Margin="0,115,0,155" Grid.Row="1" HorizontalAlignment="Center">Genres</Button>
-            <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,145,0,125" Grid.Row="1" HorizontalAlignment="Center">Break</Button>
+            <Button Click="Genre" Style="{StaticResource buttonStyle}" Margin="0,145,0,125" Grid.Row="1" HorizontalAlignment="Center">Genres</Button>
+            <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,115,0,155" Grid.Row="1" HorizontalAlignment="Center">Break</Button>
             <Button Click="Stations" Style="{StaticResource buttonStyle}" Margin="0,175,0,95" Grid.Row="1" HorizontalAlignment="Center">TV Stations</Button>
 
 

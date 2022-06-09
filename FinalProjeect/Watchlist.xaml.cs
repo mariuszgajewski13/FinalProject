@@ -32,8 +32,15 @@ namespace FinalProject
         {
             var query =
             from data in dataEntities.do_obejrzenia
-            select new { data.nazwa};
-
+            from data1 in dataEntities.seriale
+            from stacja in dataEntities.stacje_tv
+            from gatunki in dataEntities.gatunki
+            where data.id_serialu == data1.id_serialu
+            let stacjaName = stacja.nazwa
+            let gatunekName = gatunki.nazwa
+            where data.id_stacji == stacja.id_stacji
+            where gatunki.id_gatunku == data.id_gatunku_1
+            select new { data.id_serialu, data.nazwa, data1.rok_rozpoczecia, data1.rok_zakonczenia, stacjaName, gatunekName, data1.ilosc_sezonow, data1.ilosc_odcinkow, data1.czas_trwania_odcinka };
             dataGrid.ItemsSource = query.ToList();
         }
 

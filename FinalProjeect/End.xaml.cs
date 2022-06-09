@@ -32,10 +32,16 @@ namespace FinalProject
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var query =
-           from data in dataEntities.koniec
-           from data1 in dataEntities.seriale
-           where data.id_serialu == data1.id_serialu
-           select new { data1.nazwa };
+            from data in dataEntities.koniec
+            from data1 in dataEntities.seriale
+            from stacja in dataEntities.stacje_tv
+            from gatunki in dataEntities.gatunki
+            where data.id_serialu == data1.id_serialu
+            let stacjaName = stacja.nazwa
+            let gatunekName = gatunki.nazwa
+            where data1.id_stacji == stacja.id_stacji
+            where gatunki.id_gatunku == data1.id_gatunku_1
+            select new { data.id_serialu, data1.nazwa, data1.rok_rozpoczecia, data1.rok_zakonczenia, stacjaName, gatunekName, data1.ilosc_sezonow, data1.ilosc_odcinkow, data1.czas_trwania_odcinka };
 
             dataGrid.ItemsSource = query.ToList();
         }

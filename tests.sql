@@ -1,6 +1,9 @@
 ﻿SELECT * from seriale;
 select * from koniec;
 SELECT * from gatunki;
+select * from do_obejrzenia;
+select * from przerwa;
+select * from na_biezaco;
 
 SELECT seriale.nazwa, rok_rozpoczecia, rok_zakonczenia, gatunki.nazwa 
 from koniec 
