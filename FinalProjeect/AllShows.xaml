@@ -22,7 +22,7 @@
 
         <Rectangle Fill="#8D98A7" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,1" />
         <Label Style="{StaticResource headerTextStyle}" Height="30" Margin="10,0,26,0" >
-            All TV Shows
+            All Shows
         </Label>
         <Grid Margin="10,10,10,10" Grid.Column="0" Grid.Row="1">
 
