@@ -46,7 +46,7 @@
 
         <!-- Button style -->
         <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Width" Value="125" />
+            <Setter Property="Width" Value="110" />
             <Setter Property="Height" Value="25" />
             <Setter Property="Margin" Value="0,10,0,0" />
             <Setter Property="HorizontalAlignment" Value="Right" />
@@ -59,7 +59,17 @@
         </Style>
 
         <Style x:Key="dataGridStyle" TargetType="{x:Type DataGrid}">
-            <Setter Property="Background" Value="#646E78" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Width" Value="auto" />
+
+        </Style>
+        
+        <!--Top Bar-->
+        <Style x:Key="topBar" TargetType="{x:Type Rectangle}">
+            <Setter Property="Fill" Value="#8D98A7" />
+            <Setter Property="Grid.Row" Value="0" />
+            <Setter Property="Grid.ColumnSpan" Value="2" />
+            <Setter Property="Height" Value="75" />
         </Style>
     </Application.Resources>
 </Application>

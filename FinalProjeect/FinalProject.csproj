@@ -70,6 +70,9 @@
     <Compile Include="AllShows.xaml.cs">
       <DependentUpon>AllShows.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Break.xaml.cs">
+      <DependentUpon>Break.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CurrentlyWatching.xaml.cs">
       <DependentUpon>CurrentlyWatching.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Break.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CurrentlyWatching.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +151,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TV_Stations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Watchlist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,6 +170,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TV_Stations.xaml.cs">
+      <DependentUpon>TV_Stations.xaml</DependentUpon>
     </Compile>
     <Compile Include="Watchlist.xaml.cs">
       <DependentUpon>Watchlist.xaml</DependentUpon>

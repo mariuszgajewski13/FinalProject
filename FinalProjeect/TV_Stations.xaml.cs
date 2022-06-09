@@ -12,28 +12,43 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity.Core.Objects;
 
 namespace FinalProject
 {
     /// <summary>
-    /// Logika interakcji dla klasy FinalrojeectHome.xaml
+    /// Logika interakcji dla klasy Watchlist.xaml
     /// </summary>
-    public partial class FinalProjectHome : Page
+    public partial class TV_Stations : Page
     {
+        seriale_dbEntities dataEntities = new seriale_dbEntities();
         Menu menu = new Menu();
-        public FinalProjectHome()
+
+        public TV_Stations()
         {
             InitializeComponent();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query =
+           from stacja in dataEntities.stacje_tv
+           select new { stacja.id_stacji, stacja.nazwa };
+
+            dataGrid.ItemsSource = query.ToList();
+        }
+
+        public TV_Stations(object data) : this()
+        {
+            this.DataContext = data;
         }
 
         public void All(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
-            //menu.All();
-            //Menu menu1 = new Menu();
-            //menu.All();
+            // menu.All();
         }
-        
+
         private void Watchlist(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
@@ -42,25 +57,14 @@ namespace FinalProject
         {
             NavigationService.Navigate(new Uri("/CurrentlyWatching.xaml", UriKind.Relative));
         }
-        
-        private void End(object sender, RoutedEventArgs e)
+
+        private void Ended(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/End.xaml", UriKind.Relative));
         }
-
         private void Genres(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Genres.xaml", UriKind.Relative));
-        }
-
-        private void OnBreak(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Break.xaml", UriKind.Relative));
-        }
-
-        private void Stations(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/TV_Stations.xaml", UriKind.Relative));
         }
     }
 }
