@@ -38,10 +38,13 @@
                 <Label Grid.Row="0" Style="{StaticResource listHeaderTextStyle}">Menu</Label>
             </Border>
 
-            <Button Grid.Row="1" Click="All" Style="{StaticResource buttonStyle}" Margin="0,12,0,140" HorizontalAlignment="Center">All</Button>
-            <Button Grid.Row="1" Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,42,0,110" HorizontalAlignment="Center">Watchlist</Button>
-            <Button Grid.Row="1" Click="Current" Style="{StaticResource buttonStyle}" Margin="0,72,0,80" HorizontalAlignment="Center">Currently watching</Button>
-            <Button Grid.Row="1" Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,102,0,50" HorizontalAlignment="Center">Ended</Button>
+            <Button Click="All" Style="{StaticResource buttonStyle}" Margin="0,5,0,265" Grid.Row="1" HorizontalAlignment="Center">All</Button>
+            <Button Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,35,0,235" Grid.Row="1" HorizontalAlignment="Center">Watchlist</Button>
+            <Button Click="Current" Style="{StaticResource buttonStyle}" Margin="0,65,0,205" Grid.Row="1" HorizontalAlignment="Center">Currently watching</Button>
+            <Button Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,95,0,175" Grid.Row="1" HorizontalAlignment="Center">Ended</Button>
+            <Button Click="Genre" Style="{StaticResource buttonStyle}" Margin="0,125,0,145" Grid.Row="1" HorizontalAlignment="Center">Genres</Button>
+            <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,155,0,115" Grid.Row="1" HorizontalAlignment="Center">Break</Button>
+            <Button Click="Stations" Style="{StaticResource buttonStyle}" Margin="0,185,0,85" Grid.Row="1" HorizontalAlignment="Center">TV Stations</Button>
 
 
 

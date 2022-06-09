@@ -28,14 +28,23 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition />
             </Grid.RowDefinitions>
 
+            <Border Grid.Row="0" Style="{StaticResource listHeaderStyle}">
+                <Label Grid.Row="0" Style="{StaticResource listHeaderTextStyle}">Menu</Label>
+            </Border>
+
+            <Button Click="All" Style="{StaticResource buttonStyle}" Margin="0,5,0,265" Grid.Row="1" HorizontalAlignment="Center">All</Button>
+            <Button Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,35,0,235" Grid.Row="1" HorizontalAlignment="Center">Watchlist</Button>
+            <Button Click="Current" Style="{StaticResource buttonStyle}" Margin="0,65,0,205" Grid.Row="1" HorizontalAlignment="Center">Currently watching</Button>
+            <Button Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,95,0,175" Grid.Row="1" HorizontalAlignment="Center">Ended</Button>
+            <Button Click="Genre" Style="{StaticResource buttonStyle}" Margin="0,125,0,145" Grid.Row="1" HorizontalAlignment="Center">Genres</Button>
+            <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,155,0,115" Grid.Row="1" HorizontalAlignment="Center">Break</Button>
+            <Button Click="Stations" Style="{StaticResource buttonStyle}" Margin="0,185,0,85" Grid.Row="1" HorizontalAlignment="Center">TV Stations</Button>
 
         </Grid>
         <DataGrid Grid.Column="1" Grid.Row="1" Name="all" Style="{StaticResource dataGridStyle}" />

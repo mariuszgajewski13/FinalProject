@@ -37,12 +37,12 @@
             <ListBoxItem>Watched</ListBoxItem>-->
         <Grid Grid.Row="3" Margin="10,0,14,0" >
             <Button Click="All" Style="{StaticResource buttonStyle}" Margin="0,10,134,143">All</Button>
-            <Button Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,40,133,113">Watchlist</Button>
-            <Button Click="Current" Style="{StaticResource buttonStyle}" Margin="0,70,133,83">Currently watching</Button>
-            <Button Click="End" Style="{StaticResource buttonStyle}" Margin="0,100,134,53">Ended</Button>
-            <Button Click="Genres" Style="{StaticResource buttonStyle}" Margin="0,10,10,143">Genres</Button>
-            <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,130,134,23">Break</Button>
-            <Button Click="Stations" Style="{StaticResource buttonStyle}" Margin="0,40,10,113">TV Stations</Button>
+            <Button Click="Watchlist" Style="{StaticResource buttonStyle}" Margin="0,10,10,143">Watchlist</Button>
+            <Button Click="Current" Style="{StaticResource buttonStyle}" Margin="0,48,133,105">Currently watching</Button>
+            <Button Click="Ended" Style="{StaticResource buttonStyle}" Margin="0,78,134,75">Ended</Button>
+            <Button Click="Genre" Style="{StaticResource buttonStyle}" Margin="0,78,10,75">Genres</Button>
+            <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,108,134,45">Break</Button>
+            <Button Click="Stations" Style="{StaticResource buttonStyle}" Margin="0,108,10,45">TV Stations</Button>
         </Grid>
         <!--</ListBox>-->
 

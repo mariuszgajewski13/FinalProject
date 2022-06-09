@@ -26,14 +26,12 @@ namespace FinalProject
             InitializeComponent();
         }
 
-        public void All(object sender, RoutedEventArgs e)
+        private void All(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
-            //menu.All();
-            //Menu menu1 = new Menu();
-            //menu.All();
+            // menu.All();
         }
-        
+
         private void Watchlist(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
@@ -42,22 +40,19 @@ namespace FinalProject
         {
             NavigationService.Navigate(new Uri("/CurrentlyWatching.xaml", UriKind.Relative));
         }
-        
-        private void End(object sender, RoutedEventArgs e)
+
+        private void Ended(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/End.xaml", UriKind.Relative));
         }
-
-        private void Genres(object sender, RoutedEventArgs e)
+        private void Genre(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Genres.xaml", UriKind.Relative));
         }
-
         private void OnBreak(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Break.xaml", UriKind.Relative));
         }
-
         private void Stations(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/TV_Stations.xaml", UriKind.Relative));

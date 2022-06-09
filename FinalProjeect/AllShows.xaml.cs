@@ -47,5 +47,37 @@ namespace FinalProject
         {
             this.DataContext = data;
         }
+
+        public void All(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AllShows.xaml", UriKind.Relative));
+            // menu.All();
+        }
+
+        private void Watchlist(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Watchlist.xaml", UriKind.Relative));
+        }
+        private void Current(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/CurrentlyWatching.xaml", UriKind.Relative));
+        }
+
+        private void Ended(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/End.xaml", UriKind.Relative));
+        }
+        private void Genre(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Genres.xaml", UriKind.Relative));
+        }
+        private void OnBreak(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Break.xaml", UriKind.Relative));
+        }
+        private void Stations(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/TV_Stations.xaml", UriKind.Relative));
+        }
     }
 }
