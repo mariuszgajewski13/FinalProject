@@ -45,6 +45,7 @@
             <Button Click="Genre" Style="{StaticResource buttonStyle}" Margin="0,155,0,115" Grid.Row="1" HorizontalAlignment="Center">Genres</Button>
             <Button Click="OnBreak" Style="{StaticResource buttonStyle}" Margin="0,125,0,145" Grid.Row="1" HorizontalAlignment="Center">Break</Button>
             <Button Click="Stations" Style="{StaticResource buttonStyle}" Margin="0,185,0,85" Grid.Row="1" HorizontalAlignment="Center">TV Stations</Button>
+            <Button Click="AddShow" Style="{StaticResource buttonStyle}" Margin="0,240,0,30" Grid.Row="1" HorizontalAlignment="Center">Add new TV show</Button>
 
         </Grid>
         <DataGrid Grid.Column="1" Grid.Row="1" Name="all" Style="{StaticResource dataGridStyle}" />

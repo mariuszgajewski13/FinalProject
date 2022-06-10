@@ -43,6 +43,12 @@ namespace FinalProject
             all.ItemsSource = query.ToList();
         }
 
+        private void AddShow(object sender, RoutedEventArgs e)
+        {
+            AddShow addShowWindow = new AddShow();
+            addShowWindow.Show();
+        }
+
         public AllShows(object data) : this()
         {
             this.DataContext = data;
