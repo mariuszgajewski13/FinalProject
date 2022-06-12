@@ -43,33 +43,33 @@
                 <Label Style="{StaticResource listHeaderTextStyle}" Width="102" Height="36" Margin="-1,1,0,0" VerticalAlignment="Top">Gatunek 1</Label>
             </Border>
             <ComboBox Name="genres1" Margin="120,150,272,96" Height="36">
-                <ComboBoxItem>Drama</ComboBoxItem>
-                <ComboBoxItem>Crime</ComboBoxItem>
-                <ComboBoxItem>Action</ComboBoxItem>
-                <ComboBoxItem>Adventure</ComboBoxItem>
-                <ComboBoxItem>Comedy</ComboBoxItem>
+                <ComboBoxItem>1-Drama</ComboBoxItem>
+                <ComboBoxItem>2-Adventure</ComboBoxItem>
+                <ComboBoxItem>3-Comedy</ComboBoxItem>
+                <ComboBoxItem>4-Crime</ComboBoxItem>
+                <ComboBoxItem>5-Action</ComboBoxItem>
             </ComboBox>
 
             <Border Style="{StaticResource listHeaderStyle}" Margin="14,191,451,56">
                 <Label Style="{StaticResource listHeaderTextStyle}" Width="102" Height="36" Margin="-1,1,0,0" VerticalAlignment="Top">Gatunek 2</Label>
             </Border>
             <ComboBox Name="genres2" Margin="147,190,272,56" Height="36">
-                <ComboBoxItem>Drama</ComboBoxItem>
-                <ComboBoxItem>Crime</ComboBoxItem>
-                <ComboBoxItem>Action</ComboBoxItem>
-                <ComboBoxItem>Adventure</ComboBoxItem>
-                <ComboBoxItem>Comedy</ComboBoxItem>
+                <ComboBoxItem>1-Drama</ComboBoxItem>
+                <ComboBoxItem>2-Adventure</ComboBoxItem>
+                <ComboBoxItem>3-Comedy</ComboBoxItem>
+                <ComboBoxItem>4-Crime</ComboBoxItem>
+                <ComboBoxItem>5-Action</ComboBoxItem>
             </ComboBox>
 
             <Border Style="{StaticResource listHeaderStyle}" Margin="14,232,451,15">
                 <Label Style="{StaticResource listHeaderTextStyle}" Width="102" Height="36" Margin="-1,1,0,0" VerticalAlignment="Top">Gatunek 3</Label>
             </Border>
             <ComboBox Name="genres3" Margin="147,231,272,15" Height="36">
-                <ComboBoxItem>Drama</ComboBoxItem>
-                <ComboBoxItem>Crime</ComboBoxItem>
-                <ComboBoxItem>Action</ComboBoxItem>
-                <ComboBoxItem>Adventure</ComboBoxItem>
-                <ComboBoxItem>Comedy</ComboBoxItem>
+                <ComboBoxItem>1-Drama</ComboBoxItem>
+                <ComboBoxItem>2-Adventure</ComboBoxItem>
+                <ComboBoxItem>3-Comedy</ComboBoxItem>
+                <ComboBoxItem>4-Crime</ComboBoxItem>
+                <ComboBoxItem>5-Action</ComboBoxItem>
             </ComboBox>
 
             <Border Style="{StaticResource listHeaderStyle}" Margin="342,28,122,219">
