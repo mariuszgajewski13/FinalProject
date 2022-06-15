@@ -76,11 +76,11 @@
                 <Label Style="{StaticResource listHeaderTextStyle}" Width="102" Height="36" Margin="-1,1,0,0" VerticalAlignment="Top">Stacja TV</Label>
             </Border>
             <ComboBox Name="stations" Margin="476,27,-57,219" Height="36">
-                <ComboBoxItem>HBO</ComboBoxItem>
-                <ComboBoxItem>Netflix</ComboBoxItem>
-                <ComboBoxItem>Prime Video</ComboBoxItem>
-                <ComboBoxItem>abc</ComboBoxItem>
-                <ComboBoxItem>CW</ComboBoxItem>
+                <ComboBoxItem>1-HBO</ComboBoxItem>
+                <ComboBoxItem>2-Netflix</ComboBoxItem>
+                <ComboBoxItem>3-Prime Video</ComboBoxItem>
+                <ComboBoxItem>4-abc</ComboBoxItem>
+                <ComboBoxItem>5-CW</ComboBoxItem>
             </ComboBox>
 
             <Border Style="{StaticResource listHeaderStyle}" Margin="342,69,157,178">

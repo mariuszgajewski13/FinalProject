@@ -34,9 +34,9 @@ namespace FinalProject
                 serialeDB.rok_rozpoczecia = int.Parse(beginYear.Text);
                 serialeDB.rok_zakonczenia = int.Parse(endYear.Text);
                 serialeDB.id_gatunku_1 = int.Parse(genres1.Text.ElementAt(0).ToString());
-                serialeDB.id_gatunku_2 = int.Parse(genres1.Text.ElementAt(0).ToString());
-                serialeDB.id_gatunku_3 = int.Parse(genres1.Text.ElementAt(0).ToString());
-                serialeDB.id_stacji = int.Parse(genres1.Text.ElementAt(0).ToString());
+                serialeDB.id_gatunku_2 = int.Parse(genres2.Text.ElementAt(0).ToString());
+                serialeDB.id_gatunku_3 = int.Parse(genres3.Text.ElementAt(0).ToString());
+                serialeDB.id_stacji = int.Parse(stations.Text.ElementAt(0).ToString());
                 serialeDB.ilosc_sezonow = int.Parse(seasons.Text);
                 serialeDB.ilosc_odcinkow = int.Parse(episodes.Text);
                 serialeDB.czas_trwania_odcinka = int.Parse(episodeLength.Text);
